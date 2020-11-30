@@ -30,12 +30,12 @@ Do all the steps above to run your own code, then run `Remote-Containers: Attach
 * Often, if a function is not found in Python, it is templated in C++ and you have to put the typename after it to make it work in Python.  For example, `Values.at` become `Values.atPose2` in Python
 
 # Want better documentation
-The documentation at gtsam.org is currently at version 4.0.0, while the develop is >4.1.0.  You can create your own documentation for the current code, but it is in a format that it really needs to be served from webserver.  Fortunately, this is very easy for docker. So..
+The documentation at gtsam.org is currently at version 4.0.0, while the develop is >4.1.0.  You can create your own documentation for the current code, but it is in a format that it really needs to be served from webserver.  Fortunately, this is very easy for docker. So...
 * cd gtsam-doc
 * docker build -t cntaylor/gtsam-doc .
 
-This creates a docker file that will serve up the gtsam documentation on the local port.  I use:
+This creates a Docker container that will serve up the gtsam documentation on the local port.  I use:
 
-`docker run -d -p 80:80 cntaylor/gtsam-doc`
+`docker run -d -p 8888:80 cntaylor/gtsam-doc`
 
-I then go to `localhost/index.html` in my web browser and can happily browse the gtsam documentation.
+I then go to `localhost:8888` in my web browser and can happily browse the gtsam documentation.

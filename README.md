@@ -6,7 +6,7 @@ Basically, I generate two Docker images.  The first one creates a container with
 
 # To use
 ## Starting fresh
-Basically, run `new_docker.sh`.  I run this in git bash.  The first time you run this, it takes forever, but it is downloading all sorts of packages, the compiling with the most recent GTSAM.
+Basically, run `new_docker.sh`.  (Requires a bash shell -- I use git bash).  It is a couple of really simple scripts, so you can just run the commands if you don't have a bash shell.  The first time you run this, it takes forever, but it is downloading all sorts of packages, then compiling with the most recent GTSAM.
 
 ## Updating GTSAM
 If you have done this once before, but just want the most recent version of GTSAM, run `update_gtsam.sh`.  This runs a subset of `new_docker.sh`.

@@ -17,7 +17,7 @@ RUN cmake \
     -DGTSAM_PYTHON_VERSION=3\
     ..
 
-# Build again, as ubuntu-gtsam image cleaned
+# Build and install gtsam code
 RUN make -j4 install && make -j4 python-install && make clean
 
 # Needed to link with GTSAM

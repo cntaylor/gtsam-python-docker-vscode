@@ -12,3 +12,20 @@ Basically, run `new_docker.sh`.  I run this in git bash.  The first time you run
 If you have done this once before, but just want the most recent version of GTSAM, run `update_gtsam.sh`.  This runs a subset of `new_docker.sh`.
 
 ## Docker is made, now what
+### Running your own code
+* In VS Code, install the `Remote - Containers` extension.  
+* Copy the Dockerfile in the `to-copy` directory into the directory that has your code
+* Open up a VS Code window for the directory with your code in it (may want the code to be in `\\WSL$` somewhere -- not needed but supposed to be faster)
+* Call `Remote-Containers: Open Folder in Container` (use F1 and start typing).  Use the directory with your code in it and tell it to use the `From Dockerfile` option
+* Under extensions, find the `Python` extension and install it in the Dev container
+
+You can now run your Python code in the Docker container.  If you put a `#%% `at the top of your Python file, it will treat it like a Docker container and the output (including plots/graphics!) will show up inside of VScode
+
+### Running examples from GTSAM
+Do all the steps above to run your own code, then run `Remote-Containers: Attach to a Running Container`.  You can then open up `/usr/src/gtsam/python/gtsam/examples` and run the code that you want to.
+
+### (Hopefully) helpful hints
+* Most functions are the same name in Python as in C (i.e. what the gtsam documentation provides)
+* You can run iPython in the terminal in VSCode to help you find the function names in Python
+* Often, if a function is not found in Python, it is templated in C++ and you have to put the typename after it to make it work in Python.  For example, `Values.at` become `Values.atPose2` in Python
+

@@ -22,7 +22,7 @@ If you have done this once before, but just want the most recent version of GTSA
 You can now run your Python code in the Docker container.  If you put a `#%% `at the top of your Python file, it will treat it like a Jupyter notebook and the output (including plots/graphics!) will show up inside of VScode
 
 ### Running examples from GTSAM
-Do all the steps above to run your own code, then run `Remote-Containers: Attach to a Running Container`.  You can then open up `/usr/src/gtsam/python/gtsam/examples` and run the code that you want to.
+Do all the steps above to run your own code, then run `Dev Containers: Attach to a Running Container`.  You can then open up `/usr/src/gtsam/python/gtsam/examples` and run the code that you want to.
 
 ### (Hopefully) helpful hints
 * Most functions are the same name in Python as in C (i.e. what the gtsam documentation provides)

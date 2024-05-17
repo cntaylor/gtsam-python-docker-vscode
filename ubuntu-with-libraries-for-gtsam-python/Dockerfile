@@ -1,6 +1,6 @@
 # Get the base Ubuntu image from Docker Hub.
-# I know that focal works (the current latest -- Nov 2020)
-FROM ubuntu:focal
+# Trying out jammy (22.04)
+FROM ubuntu:jammy
 
 # Disable GUI prompts
 ENV DEBIAN_FRONTEND noninteractive

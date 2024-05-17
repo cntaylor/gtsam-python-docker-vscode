@@ -2,7 +2,7 @@ FROM cntaylor/with-libraries-for-gtsam-python
 
 # Clone GTSAM (develop branch)
 WORKDIR /usr/src
-RUN git clone --single-branch --branch develop https://github.com/borglab/gtsam.git
+RUN git clone --single-branch --branch discrete_normalizing_constants https://github.com/cntaylor/gtsam.git
 
 # Change to build directory. Will be created automatically.
 WORKDIR /usr/src/gtsam/build

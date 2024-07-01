@@ -8,6 +8,7 @@ RUN git clone --single-branch --branch develop https://github.com/borglab/gtsam.
 WORKDIR /usr/src/gtsam/build
 # Run cmake
 RUN cmake \
+    # Can switch the following to Debug if you need to "step into" GTSAM libraries
     -DCMAKE_BUILD_TYPE=Release \
     -DGTSAM_WITH_EIGEN_MKL=OFF \
     -DGTSAM_BUILD_EXAMPLES_ALWAYS=OFF \

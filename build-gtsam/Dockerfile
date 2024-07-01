@@ -8,7 +8,7 @@ RUN git clone --single-branch --branch discrete_normalizing_constants https://gi
 WORKDIR /usr/src/gtsam/build
 # Run cmake
 RUN cmake \
-    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_BUILD_TYPE=DEBUG \
     -DGTSAM_WITH_EIGEN_MKL=OFF \
     -DGTSAM_BUILD_EXAMPLES_ALWAYS=OFF \
     -DGTSAM_BUILD_TIMING_ALWAYS=OFF \

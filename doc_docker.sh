@@ -1,3 +1,3 @@
 #!/bin/bash
-cd gtsam-doc
-docker build --no-cache -t cntaylor/gtsam-doc .
+docker build --target docs -t cntaylor/gtsam-doc .
+docker run -d -p 8888:80 cntaylor/gtsam-doc

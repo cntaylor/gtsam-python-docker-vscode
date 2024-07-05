@@ -13,7 +13,7 @@
 		"dockerfile": "../Dockerfile",
 		// Choose which "end state" you want to use.  "release" is the default.  "debug" is useful for debugging.
 		"target" : "release"
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},

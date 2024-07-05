@@ -103,6 +103,9 @@ CMD ["apache2ctl", "-D", "FOREGROUND"]
 # Build the "Debug" end state
 FROM gtsam-downloaded AS debug
 
+# Required for debugging C++ code
+RUN apt-get -y install gdb
+
 # Change to build directory. 
 WORKDIR /usr/src/gtsam/build
 # Run cmake

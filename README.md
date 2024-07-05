@@ -24,20 +24,24 @@ Once this is done, you can run your code in VSCODE.
 
 # Running your own code
 * In VS Code, install the `Dev Containers` extension.  
-* Copy the things inside the `to-copy` directory into the directory that has your code.  Basically, you need the `Dockerfile` and the `.devcontainer/devcontainer.json` files.
+* Copy the things inside the `to-copy` directory into the directory that has your code.  Basically, you need the `Dockerfile`, the `.devcontainer/devcontainer.json` file, and -- for debugging -- the `.vscode/launch.json` file.
 * Open up a VS Code window for the directory with your code in it (may want the code to be in `\\WSL$` somewhere -- not needed but supposed to be faster)
 * Call `Dev Containers: Open Folder in Container` (use F1 and start typing).  Use the directory with your code in it and tell it to use the `From Dockerfile` option.  Ignore all of the "additional install" options.  
 * If you want to run the gtsam code itself, you can do a `Add folder to workspace` inside VScode and add `/usr/src/gtsam` to your workspace.  This is the folder with the **gtsam** code.  This enables you to (for example) run the Python examples in `/usr/src/gtsam/python/gstam/examples`.  
-* The first time I did this VSCode complained that I hadn't chosen the Python interpreter.  Make sure to choose the one inside the container (/usr/bin/python3) as opposed to something in the host computer.
 
-## Switching between debug and release
-Using the `devcontainer.json` file, you can switch between debug and release.  There is a "target" property in the json file that asks for which target to build.  Set it to "debug" or "release".  (Note that this assumes you built both versions in the instructions above!)  After you change it, VSCode will tell you it noticed a change in the configuration file and ask if you want to rebuid the continer.  The answer is yes.
+**Hints**
+* The first time I tried to run Python code inside the container, VSCode complained that I hadn't chosen the Python interpreter.  Make sure to choose the one inside the container (e.g., /usr/bin/python3) as opposed to something in the host computer.
+* For some reason, even though I copied `launch.json` into my directory, it seems to get overwritten with a blank file sometimes.  Just copy the "configurations" structure into the launch.json if things don't work to enable debugging of C++ code.
+
+## Using "debug" mode
+If you are only debugging in Python, this is not needed.  These steps allow you to debug C++ (e.g. gtsam) code while writing your high-level code in Python.
+
+Using the `devcontainer.json` file, you can switch between debug and release.  There is a "target" property in the json file that asks for which target to build.  Set it to "debug" or "release" (default is release).  Note that this assumes you built both versions in the instructions above!  After you change it, VSCode will tell you it noticed a change in the configuration file and the container may need to be rebuilt.  Please rebuild the container!
+
+To enable breakpoints in the C++ code, you will need to start your debugging session using the "Python Debugger: Debug using launch.json".  This uses the great extension `pythoncpp.debug` that automatically attaches a "gdb" debugger to your C++ code while launching the Python debugger.  Note that you still can't "step into" the C++ code, but you can set breakpoints in the C++ code, and it will stop there when things are being run.  It is probably worth glancing at the documentation for the pythoncpp extension as there are some intricacies in mixed debugging that it mentions.
 
 ## Go!
 You can now run your Python code in the Docker container.  If you put a `#%% `at the top of your Python file, it will treat it like a Jupyter notebook and the output (including plots/graphics!) will show up inside of VScode
-
-## Running examples from GTSAM
-Do all the steps above to run your own code, then run `Dev Containers: Attach to a Running Container`.  You can then open up `/usr/src/gtsam/python/gtsam/examples` in the container and run the code that you want to.
 
 # (Hopefully) helpful hints
 * Most functions are the same name in Python as in C (i.e. what the gtsam documentation provides)

@@ -26,7 +26,7 @@ Once this is done, you can run your code in VSCODE.
 * In VS Code, install the `Dev Containers` extension.  
 * Copy the things inside the `to-copy` directory into the directory that has your code.  Basically, you need the `Dockerfile`, the `.devcontainer/devcontainer.json` file, and -- for debugging -- the `.vscode/launch.json` file.
 * Open up a VS Code window for the directory with your code in it (may want the code to be in `\\WSL$` somewhere -- not needed but supposed to be faster)
-* Call `Dev Containers: Open Folder in Container` (use F1 and start typing).  Use the directory with your code in it and tell it to use the `From Dockerfile` option.  Ignore all of the "additional install" options.  
+* Call `Dev Containers: Open Folder in Container` (use ctrl-shift-P and start typing).  Use the directory with your code in it and tell it to use the `From Dockerfile` option.  Ignore all of the "additional install" options.  
 * If you want to run the gtsam code itself, you can do a `Add folder to workspace` inside VScode and add `/usr/src/gtsam` to your workspace.  This is the folder with the **gtsam** code.  This enables you to (for example) run the Python examples in `/usr/src/gtsam/python/gstam/examples`.  
 
 **Hints**

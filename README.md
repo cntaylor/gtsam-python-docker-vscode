@@ -1,6 +1,8 @@
 # Motivation
 I have a windows machine, but want to run [GTSAM](https://github.com/borglab/gtsam).  While you can build in Windows, GTSAM is realy designed to run on a Unix/Linux system, so Docker is a nice option.  However, I would like to do graphs occasionally to see results, don't want to have a new development environment, etc.  You could set up a whole VNC, etc., but VS Code allows you to run "within" the Docker so your development environment is the same as always, without requiring graphic drivers inside the Docker container.  Furthermore, VSCode will display images and such for you directly if you just put a #%% at the top of a Python file.  This makes it look like a "Jupyter" style thing, and VS Code then displays your figures.
 
+**NOTE:** You can just `pip install gtsam`.  If you don't need the most recent changes, or to step into the C++ code during debugging, or something else specialized, that is probably the best way to go.  These Docker containers compile everything from scratch.
+
 # Structure
 While using Docker, there are really 3 different things that can be done that are useful.  First, you can run your own code in VS Code and not ever jump into GTSAM.  Second, you can run your own code, but then also need to jump into GTSAM code to debug what is going on.  Third, you may want the current documentation for GTSAM to be available.  Each of these cases are covered below (in reverse order)
 
